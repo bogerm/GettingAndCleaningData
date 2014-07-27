@@ -1,3 +1,5 @@
+setwd("/Documentation/Video Trainings/InProgress/Data Science Track/Getting and Cleaning Data/Project/GettingAndCleaningData");
+
 activity_labels <- read.table("activity_labels.txt", header=FALSE, sep=" ",stringsAsFactors=FALSE)
 features_labels <- read.table("features.txt",header=FALSE, sep=" ",stringsAsFactors=FALSE)
 names(features_labels) <- c("id", "features")
@@ -19,3 +21,4 @@ mean_std_index <- sort(union(grep("mean", names(data), fixed=T), grep("std", nam
 data_mean_std <- data[, mean_std_index]
 
 write.table(data_mean_std,"tidy.txt",sep=" ")
+
